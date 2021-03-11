@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "../styles/App.css";
 import ReactDOM from "react-dom";
 const App = () => {
@@ -10,20 +10,21 @@ const App = () => {
     top: "0px",
   });
   const reset = () => {
-  setX(0);
+setX(0);
     setY(0);
     setBallPosition({left:"0px",top:"0px"});
     setRenderBall(false);
     renderChoice();
   };
   const renderChoice = () => {
-        if(renderBall)
+      if(renderBall)
       return (<div className="ball" style={{position:"absolute",left:x , top:y}}></div>);
       else
       return (<button className="start ballProvider" onClick={getBall}>Start</button>);
+
+   
   };
-      
-     function getBall()
+  function getBall()
   {
       setRenderBall(true);
       renderChoice();
@@ -44,9 +45,9 @@ const App = () => {
       });
     renderChoice();
   },[]);
+    
+    
 
-              
-              
 
   return (
     <div className="playground">
@@ -58,4 +59,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App
