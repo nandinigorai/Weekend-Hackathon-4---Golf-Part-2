@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import "../styles/App.css";
 import ReactDOM from "react-dom";
-
 const App = () => {
   const [renderBall, setRenderBall] = useState(false);
   const [x, setX] = useState(0);
